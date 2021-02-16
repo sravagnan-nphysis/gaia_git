@@ -86,7 +86,7 @@ def update_widget(interval, previous, after, current_date, current_time):
         return [date,
                 day_label,
                 img_url,
-                "{:.2f} m/s".format(subset['IntensitaVento'].values[0]),
+                "{:.2f} km/h".format(subset['IntensitaVento'].values[0]),
                 degrees_to_cardinal(subset['DirezioneVento'].values[0]),
                 '{:.2f} \N{DEGREE SIGN}'.format(subset['Temperatura'].values[0])]
     else:
