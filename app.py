@@ -13,7 +13,7 @@ from components import grid, header
 from settings import DAYTIMES, degrees_to_cardinal
 
 
-app = dash.Dash('weather_widget',
+app = dash.Dash('weather_widget', title='nPhysis Widget',
                 external_stylesheets=[dbc.themes.CYBORG])
 
 server = app.server
