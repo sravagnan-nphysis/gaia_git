@@ -86,9 +86,9 @@ def update_widget(interval, previous, after, current_date, current_time):
         return [date,
                 day_label,
                 img_url,
-                "{:.2f} km/h".format(subset['IntensitaVento'].values[0]),
+                "{:.1f} km/h".format(subset['IntensitaVento'].values[0]),
                 degrees_to_cardinal(subset['DirezioneVento'].values[0]),
-                '{:.2f} \N{DEGREE SIGN}'.format(subset['Temperatura'].values[0])]
+                '{:.1f} \N{DEGREE SIGN}'.format(subset['Temperatura'].values[0])]
     else:
         print("No update: subset shape {}".format(subset.shape))
         raise PreventUpdate
