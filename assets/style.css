@@ -1,3 +1,149 @@
+@font-face {
+    font-family: "Mandatory Plaything";   
+    src: url("http://fonts.cdnfonts.com/css/mandatory-plaything/Mandatory Plaything.woff") format("woff");
+}
+html, body{
+    font-family:"Mandatory Plaything"
+}
+.card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 0px solid rgba(0, 0, 0, 0);
+}
+
+.round-button {
+    display:block;
+    width:55px;
+    height:55px;
+    line-height:50px;
+    margin: auto;
+    /* vertical-align: middle; */
+    border: 2px solid #00000;
+    border-radius: 50%;;
+    color: black;
+    /* display: inline-block; */
+    text-align:center;
+    text-decoration:none;
+    background: #84BD00;
+    box-shadow: 0 0 3px gray;
+    font-size:12px;
+    font-weight:bold;
+    padding: 0px;
+}
+/* GIALLO #EFC050 */
+/* VERDE #84BD00*/
+/* ROSSO #FF6F61*/
+
+.round-button:hover {
+    font-size
+    font-size:12px;
+    background: #325c90;
+}
+
+.button_group .button{
+    font-size: 12px;
+    padding: 0px 5px;
+    width: 50px;
+    background-color:#325c90;
+}
+.button_group .button:hover {
+    background-color: #999999;
+    box-shadow: 0 5px 5px 0 #325c90,0 10px 20px 0 #325c90;
+  }
+ 
+.logo {
+    height: 18px;
+    padding: 0%;
+    margin: 0%;
+  }
+
+.logo:hover {
+    transform: scale(1.2);
+  } 
+
+.deck_card_body{
+    position: relative;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    max-height: 250px;
+}
+
+.deck_card_footer{
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px; 
+    padding-top: 8px; 
+    padding-bottom: 8px;
+}
+
+.deck_card{
+    border-radius: 24px; 
+    border:1px solid gray; 
+    box-shadow: 7px 7px #325c90D1;
+}
+
+#first_button_group{
+    border-right: 1px solid white;
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+
+#middle_button_group{
+    border-left: 1px solid white ;
+    border-right: 1px solid white ; 
+}
+
+#last_button_group{
+    border-left: 1px solid white;
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+#weather_icon_image{
+    width: 70%;
+}
+
+#weather_icon_image:hover{
+    transform: scale(1.1);
+}
+
+.card_header_tab{
+    color: #325c90;
+    border-top-left-radius: 20px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.deck_card_header{
+    height:fit-content;
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    padding-top: 0px;
+}
+
+.card_overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    visibility: none;
+    transition: .5s ease;
+  }
+
 @media (min-width: @screen-xs-min) {
 
     .h1-xs,
