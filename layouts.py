@@ -164,13 +164,13 @@ card_tab = (
                         dbc.Tab(
                             label="MATTINA",
                             tab_id="morning_tab",
-                            tab_style={"margin": "auto", "font-size": "14px"},
+                            tab_style={"margin": "auto", "font-size": "13px"},
                             label_style={"color": "#325c90"},
                         ),
                         dbc.Tab(
                             label="POMERIGGIO",
                             tab_id="afternoon_tab",
-                            tab_style={"margin": "auto", "font-size": "14px"},
+                            tab_style={"margin": "auto", "font-size": "13px"},
                             label_style={"color": "#325c90"},
                         ),
                     ],
@@ -198,6 +198,26 @@ card_tab = (
                                 dbc.Row(
                                     [
                                         dbc.Col(
+                                            [
+                                                html.I(
+                                                    className="fas fa-map-marker-alt fa-lg"
+                                                ),
+                                                html.A(" Bivacco Ferrario"),
+                                            ],
+                                            style={"textAlign": "center"},
+                                        ),
+                                    ],
+                                    style={
+                                        "max-width": "100%",
+                                        "margin": "auto",
+                                        "padding-bottom": "15px",
+                                    },
+                                ),
+                            ),
+                            html.Div(
+                                dbc.Row(
+                                    [
+                                        dbc.Col(
                                             html.Img(
                                                 src="https://www.meteoski.it/images/ms2.png",
                                                 id="weather_icon_image",
@@ -219,7 +239,10 @@ card_tab = (
                                         ),
                                     ]
                                 ),
-                                style={"max-width": "75%", "margin": "auto"},
+                                style={
+                                    "max-width": "75%",
+                                    "margin": "auto",
+                                },
                             ),
                             html.Div(
                                 dbc.Row(
