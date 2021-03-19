@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Mandatory Plaything";   
-    src: url("http://fonts.cdnfonts.com/css/mandatory-plaything/Mandatory Plaything.woff") format("woff");
+    src: url('https://fonts.cdnfonts.com/s/30677/Mandatory Plaything.woff') format('woff');
 }
 html, body{
     font-family:"Mandatory Plaything"
