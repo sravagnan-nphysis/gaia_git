@@ -20,12 +20,12 @@ if strcmp(Response.Status,'OK')
    ji.id_loc_start = 83;
    ji.id_loc_end = 84;
 %    ji.id_loc_step = 2;
-   ji.Num_days = 10;
+   ji.Num_days = 10 ;
 %-- Creazione della struttura di specificazione dell'algoritmo   
    ji.Specification = "Meteoski"; % "Meteoski" o "Meteoalpe"
    ji.Algorithm = "entita"; % "localita" o "entita"
-   ji.FileName = "paths_grignone";
-   ji.Obj = "line"; % "point" o "line"
+   ji.FileName = "cime_grignone";
+   ji.Obj = "point"; % "point" o "line"
    ji.VirtualM = "testing"; % "testing" o "deployment"
 %-- Path per Blob
    ji.pathL = "test/localita.json";
