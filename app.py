@@ -1,6 +1,6 @@
 """
 This module contains the Dash app initialisation and the entrypoint for running it.
-Author: Piero Ferrarese <piero.ferrarese@nphysis.com>
+Author: Stefano Ravagnan <stefano.ravagnan@nphysis.com>
 """
 import dash
 import dash_bootstrap_components as dbc
@@ -27,7 +27,7 @@ app.layout = dbc.Container(
     style={"max-width": "400px", "textAlign": "center"},
 )
 
-# register_callbacks(app)
+register_callbacks(app)
 
 if __name__ == "__main__":
     app.run_server(host="127.0.0.1", port="8050", debug=True)

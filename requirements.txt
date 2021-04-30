@@ -9,3 +9,6 @@ isort==5.7.0
 pytest==6.2.2
 Sphinx==3.5.1
 sphinx-rtd-theme==0.5.1
+psycopg2==2.8.6
+sqlalchemy==1.4.10
+pandas-sql==0.1.10

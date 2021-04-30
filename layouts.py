@@ -1,129 +1,10 @@
 """
 This module contains the components for the layout of the Dash app.
-Author: Piero Ferrarese <piero.ferrarese@nphysis.com>
-"""
-import dash_bootstrap_components as dbc
-import dash_html_components as html
-
-"""
-This module contains the components for the layout of the Dash app.
-Author: Piero Ferrarese <piero.ferrarese@nphysis.com>
-"""
-import dash_bootstrap_components as dbc
-import dash_html_components as html
-
-# header = dbc.Navbar(
-#     children=[
-#         html.A(
-#             dbc.Row(
-#                 [
-#                     dbc.Col(
-#                         html.Img(
-#                             src="https://www.meteoski.it/assets/site/img/logo2.png",
-#                             height="30px",
-#                         )
-#                     ),
-#                     dbc.Col(dbc.NavbarBrand("Meteoski", className="ml-2")),
-#                 ],
-#                 align="center",
-#                 no_gutters=True,
-#             ),
-#             href="https://www.meteoski.it",
-#         ),
-#         dbc.Button(html.H2("<"), id="previous-time", className="mx-auto"),
-#         html.Div([html.H3(id="date"), html.H5(id="daytime")], className="mx-auto"),
-#         dbc.Button(html.H2(">"), id="next-time", className="mx-auto"),
-#     ],
-#     id="navbar",
-# )
-
-# grid = [
-#     dbc.Row(
-#         children=[
-#             dbc.Col(
-#                 dbc.Card(
-#                     children=[
-#                         dbc.CardHeader("Weather Summary"),
-#                         html.Img(
-#                             id="weather-summary",
-#                             className="mx-auto",
-#                             style={"width": "17%", "height": "17%"},
-#                         ),
-#                     ],
-#                     id="weather-summary-card",
-#                 ),
-#                 id="weather-summary-col",
-#             ),
-#             dbc.Col(
-#                 dbc.Card(
-#                     children=[
-#                         dbc.CardHeader("Wind Speed"),
-#                         html.H2(id="wind-speed", className="mx-auto"),
-#                     ],
-#                     id="wind-speed-card",
-#                 ),
-#                 id="wind-speed-col",
-#             ),
-#         ],
-#         id="first-row",
-#     ),
-#     dbc.Row(
-#         children=[
-#             dbc.Col(
-#                 dbc.Card(
-#                     children=[
-#                         dbc.CardHeader("Temperature"),
-#                         html.H2(id="temperature", className="mx-auto"),
-#                     ],
-#                     id="temperature-card",
-#                 ),
-#                 id="temperature-col",
-#             ),
-#             dbc.Col(
-#                 dbc.Card(
-#                     children=[
-#                         dbc.CardHeader("Wind Direction"),
-#                         html.H2(id="wind-direction", className="mx-auto"),
-#                     ],
-#                     id="wind-direction-card",
-#                 ),
-#                 id="wind-direction-col",
-#             ),
-#         ],
-#         id="second-row",
-#     ),
-# ]
-
-# navbar = dbc.Navbar(
-#     [
-#         html.A
-#         (
-#             dbc.Row
-#             (
-#                 [
-#                     dbc.Col
-#                     (
-#                         html.Img
-#                         (
-#                             src="https://www.meteoski.it/assets/site/img/logo_white.png",
-#                             height="30px",
-#                         )
-#                     ),
-#                 ],
-#                 align="center",
-#                 no_gutters=True,
-#             ),
-#         ),
-#         dbc.NavbarToggler(id="navbar-toggler"),
-#         dbc.Collapse(days_buttons, id="navbar-collapse", navbar=True),
-#     ],
-#     color="#325c90",
-#     dark=True,
-# )
-
-"""
 Author: Stefano Ravagnan <stefano.ravagnan@nphysis.com>
 """
+import dash_bootstrap_components as dbc
+import dash_html_components as html
+import dash_core_components as dcc
 
 days_buttons = dbc.Row(
     [
@@ -131,18 +12,15 @@ days_buttons = dbc.Row(
             dbc.ButtonGroup(
                 [
                     dbc.Button(
-                        "Mar",
-                        className="button",
-                        id="first_button_group",
-                    ),
-                    dbc.Button(
-                        "Mer",
-                        id="middle_button_group",
+                        id="first_date",
                         className="button",
                     ),
                     dbc.Button(
-                        "Gio",
-                        id="last_button_group",
+                        id="second_date",
+                        className="button",
+                    ),
+                    dbc.Button(
+                        id="third_date",
                         className="button",
                     ),
                 ],
@@ -155,28 +33,50 @@ days_buttons = dbc.Row(
     align="center",
 )
 
+tab_style = {
+    "text-transform": "uppercase",
+    "border": "grey",
+    "font-size": "11px",
+    "font-weight": 600,
+    "align-items": "center",
+    "justify-content": "center",
+    "border-radius": "4px",
+    "padding": "6px",
+}
+
+tab_selected_style = {
+    "text-transform": "uppercase",
+    "font-size": "11px",
+    "font-weight": 600,
+    "align-items": "center",
+    "justify-content": "center",
+    "border-radius": "4px",
+    "padding": "6px",
+}
+
 card_tab = (
     dbc.Card(
         [
             dbc.CardHeader(
-                dbc.Tabs(
+                dcc.Tabs(
                     [
-                        dbc.Tab(
+                        dcc.Tab(
                             label="MATTINA",
-                            tab_id="morning_tab",
-                            tab_style={"margin": "auto", "font-size": "13px"},
-                            label_style={"color": "#325c90"},
+                            value="morning_tab",
+                            className="custom-tab",
+                            style=tab_style,
+                            selected_style=tab_selected_style,
                         ),
-                        dbc.Tab(
+                        dcc.Tab(
                             label="POMERIGGIO",
-                            tab_id="afternoon_tab",
-                            tab_style={"margin": "auto", "font-size": "13px"},
-                            label_style={"color": "#325c90"},
+                            value="afternoon_tab",
+                            className="custom-tab",
+                            style=tab_style,
+                            selected_style=tab_selected_style,
                         ),
                     ],
                     id="card-tabs",
-                    card=True,
-                    active_tab="active_tab",
+                    value="morning_tab",
                 ),
                 className="deck_card_header",
             ),
@@ -202,7 +102,7 @@ card_tab = (
                                                 html.I(
                                                     className="fas fa-map-marker-alt fa-lg"
                                                 ),
-                                                html.A(" Bivacco Ferrario"),
+                                                html.A(" Biv. Ferrino"),
                                             ],
                                             style={"textAlign": "center"},
                                         ),
@@ -219,16 +119,15 @@ card_tab = (
                                     [
                                         dbc.Col(
                                             html.Img(
-                                                src="https://www.meteoski.it/images/ms2.png",
-                                                id="weather_icon_image",
+                                                id="weather_icon",
+                                                height="75",
                                             ),
-                                            style={"margin": "auto"},
                                         ),
                                         dbc.Col(
                                             html.Div(
                                                 html.A(
                                                     dbc.Button(
-                                                        "76%",
+                                                        id="comfort",
                                                         className="round-button",
                                                         style={"margin": "auto"},
                                                     ),
@@ -254,7 +153,7 @@ card_tab = (
                                                         className="fa fa-thermometer-half mx-auto fa-lg"
                                                     ),
                                                     html.H6(
-                                                        "-3°",
+                                                        id="temperature",
                                                         style={
                                                             "margin-top": "0.2rem",
                                                             "margin-left": "0.5rem",
@@ -274,7 +173,7 @@ card_tab = (
                                                         className="fa fa-wind mx-auto fa-lg"
                                                     ),
                                                     html.H6(
-                                                        "7 km/h",
+                                                        id="wind-speed",
                                                         style={"margin-top": "0.2rem"},
                                                     ),
                                                 ]
@@ -291,7 +190,7 @@ card_tab = (
                                                         className="fa fa-location-arrow mx-auto fa-lg"
                                                     ),
                                                     html.H6(
-                                                        "SSE",
+                                                        id="wind-direction",
                                                         style={"margin-top": "0.2rem"},
                                                     ),
                                                 ]
